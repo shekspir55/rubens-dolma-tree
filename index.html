@@ -1,8 +1,10 @@
+<!DOCTYPE html>
 <html>
 
 <head>
     <title>Ռուբենի Տոլմածառը</title>
     <link rel="stylesheet" href="./mvp.css">
+    <script src="./familytree.js"></script>
 </head>
 
 <body>
@@ -21,13 +23,16 @@
                                             <li>Կոշտոյան Սեթրակ</li>
                                         </ul>
                                     </li>
-                                    <li>Կոշտոյան Տիգրանուհի
+                                    <li>Կոշտոյան/Պետրոսյան Տիգրանուհի Հմայակի
 
                                     </li>
                                 </ul>
                             </a>
                         </li>
-                        <li>Թոփչյան Ալբերտ Սիմոնի
+                        <li>
+                            <a href="./TopchyanAlbertSimoni.html">
+                                Թոփչյան Ալբերտ Սիմոնի
+                            </a>
                             <ul>
                                 <li>
                                     Թոփչյան Սիմոն
@@ -52,7 +57,29 @@
             </ul>
 
         </li>
+        <li>Դավիթ Խաչատրյան Արեգի</li>
     </ul>
+    <!-- <div style="width:100%; height:700px;" id="tree" /> -->
+    <footer>
+        եթե ինֆորմացիա ունես ու ուզում ես կիսվել գրիր <a href="mailto:ruben@uru.am">ruben@uru.am</a>
+    </footer>
+
+    <script>
+        // https://balkan.app/FamilyTreeJS/Docs/GettingStarted
+        const nodes = [
+            { id: 100, gender: "male", mid: 3, fid: 4, name: "Ռուբեն Խաչատրյան" },
+            { id: 200, gender: "male", mid: 3, fid: 4, name: "Դավիթ Խաչատրյան" },
+            { id: 3, gender: "female", name: "Նաիրա Թոփչյան" },
+            { id: 4, gender: "male", name: "Արեգ Խաչատրյան" }
+        ];
+
+        const family = new FamilyTree(document.getElementById("tree"), {
+            nodeBinding: {
+                field_0: "name"
+            },
+            nodes: nodes
+        });
+    </script>
 </body>
 
 </html>
